@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입</title>
+<style>
+    /* 이 영역은 스타일 시트의 영역이다. 즉 html태그의 영역이 아니다.
+    따라서 스타일 시트 문법만 작성할 수 있다.
+    스타일 태그를 이용하면, 문서내에 스타일 시트를 적용할 대상을
+    일괄적으로 지정 및 적용 할 수 있다.
+    스타일 시트의 문법 구조
+    누구를{어떻게~~}
+    누구를 지칭할때 사용하는 CSS의 요소를 가리켜 선택자(selector)라고 한다.
+     */
+     td{
+         font-size: 9px;
+        color: red;
+     }
+     select{
+         color:white;
+         background-color: blue;
+     }
+     input{
+         background-color: yellow; border:1px solid green;
+     }
+     /* 일괄적용 + 원하는 곳에만 적용시킬 수 있는 나만의 스타일 정의 
+     이러한 스타일 시트 블럭을 가리켜 클래스라 한다. */
+     .title_style{
+        text-align:center;
+     }
+     textarea{
+        background-color:pink;
+        background-image:url(data:image/jpeg;base64,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);
+        background-repeat:no-repeat;
+        width:600px;
+        height:300px;
+        background-size:600px 300px;
+        padding:0px;
+        margin:0px;
+     }
+</style>
+</head>
+<body>
+    <table border="1px" align="center" width="700px">
+    <tr>
+        <td colspan="2" align="center" style="font-size:20px;color:red;background-color: yellow;font-weight: bold;">회원가입</td>
+    </tr>   
+    <tr>
+        <td class="title_style">ID</td>
+        <td><input type="text" placeholder="Your ID"></td>
+    </tr>
+    <tr>
+        <td class="title_style">Password</td>
+        <td><input type="password" placeholder="Your Password"></td>
+    </tr>
+    <tr>
+        <td class="title_style">Name</td>
+        <td><input type="text" placeholder="Your Name"></td>
+    <tr>
+        <td class="title_style">Phone</td>
+        <td>
+            <input type="text" placeholder="국번"> -
+            <input type="text" placeholder="앞자리"> -
+            <input type="text" placeholder="뒷자리">
+        </td>
+    </tr>
+    <tr>
+        <td class="title_style">Email</td>
+        <td><input type="text" placeholder="Mail ID">@
+            <select>
+                <option value="">naver.com</option>
+                <option value="">gmail.com</option>
+                <option value="">daum.net</option>
+                <option value="">nate.com</option>
+                <option value="">직접입력</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="title_style">Skill</td>
+        <td>
+           <input type="checkbox"> node.js
+           <input type="checkbox"> oracle
+           <input type="checkbox"> mysql
+           <input type="checkbox"> javascript
+           <input type="checkbox"> css
+           <input type="checkbox"> react
+        </td>
+    </tr>
+    <tr>
+        <td class="title_style">Email receive</td>
+        <td>
+            <input type="radio" name="mail">Yes
+            <input type="radio" name="mail">No
+        </td>
+    </tr>
+    <tr>
+        <td class="title_style">introduction</td>
+        <td>
+            <textarea></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button>가입</button>
+        </td>
+    </tr>
+    </table>
+    <hr>
+    <!-- 목록을 표현해 보자!! 
+        순서 있는 목록 : ordered list (ol)
+        순서 없는 목록 : unordered list (ul) -->
+    <ol>
+        <li>파인애플</li>
+        <li>오렌지</li>
+        <li>배</li>
+        <li>포도</li>
+    </ol>
+    <ul>
+        <li>파인애플</li>
+        <li>오렌지</li>
+        <li>배</li>
+        <li>포도</li>
+    </ul>
+    <!-- h 제목 태그는 1~6단계까지 지원됨 
+    태그를 보여지는 대로 쓰면, 스크린 리더기에 의해서
+    해석에 문제가 생긴다.. 따라서 태그 사용시 디자인 결과로 판단하지 말고
+    각 태그가 가진 고유의 의미를 이용해야 한다. (시멘틱 = sementic) 
+    즉 각 태그에는 이미 의미가 부여되어 있고, 그 의미를 살려서 쓰자!!-->
+<h1>더미 텍스트</h1>
+<h2>더미 텍스트</h2>
+<h3>더미 텍스트</h3>
+<h4>더미 텍스트</h4>
+<h5>더미 텍스트</h5>
+<h6>더미 텍스트</h6>
+
+<img src="https://cdn1.iconfinder.com/data/icons/roleplay-and-tabletop-dice/430/16-256.png">
+    <p>
+<span style="font-size:90px">Lorem</span> <b>ipsum</b> dolor sit amet, consectetuer adipiscing </p> Aenean commodo ligula eget dolor.
+<p> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.<p> Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.</p>
+ Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui.</p> 
+Aenean ut
+    
+</body>
+</html>

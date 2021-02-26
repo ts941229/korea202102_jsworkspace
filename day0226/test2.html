@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복합구조의 레이아웃</title>
+</head>
+<style>
+    #navi{
+        background-color: yellow;
+        width: 700px; 
+        height: 100px;
+    }
+    #side{
+        background-color: greenyellow;
+        width: 100px;
+        height: 550px;
+        /* 그 아무도 수평공간에 허용하지 않는 block속성을 버리게 하는 방법 즉
+        inline으로 바꾸는 방법 */
+        display: inline-block;
+    }
+    #content{
+        background-color: blue;
+        width: 600px;
+        height: 550px;
+        display: inline-block;
+    }
+    #s{
+        background:red;
+        position: absolute;
+        left: 0x;
+        top: 10px;
+    }
+    #s2{
+        background:dodgerblue;
+        position: absolute;
+        left: 10px;
+        top: 20px;
+    }
+    #box{
+        background: hotpink;
+    }
+
+    
+</style>
+<body>
+    <!-- 모든 태그는 박스모델로 간주되며
+        속성은 크게 block, inline 속성을 갖는다.
+        block : 나와 같은 수평공간에 어떤 누구도 허용하지 않는다.
+                    크기를 지정할 수 있다.(width, height 지정 가능)
+        inline : 다른 태그 요소와 수평공간에 공존이 가능하다.
+                    크기를 지정할 수 없다. -->
+    
+        <!-- <span id="s">난 스팬</span>
+        <span id="s2">난 스팬2</span>
+        <div id="box">난 div</div> -->
+
+    <div id="navi">노란색 박스</div>
+    <div id="side">사이드</div>
+    <div id="content">컨텐츠 영역</div>
+</body>
+</html>
